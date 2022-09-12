@@ -1,0 +1,17 @@
+{% extends 'baseIndex.html' %}
+{% import "_macros.html" as macros %}
+{% block navmain %}
+    <a href="{{ url_for('main.index') }}"><h2 class="light">Index</h2></a> <h2>Profile Admin</h2>
+    <a href="{{ url_for('auth.logout') }}"><h2 class="light">Logout</h2></a>
+{% endblock navmain %}
+{% block content %}
+    <div>
+        <h2>Admin: {{ name }}</h2>
+    </div>
+    <div class='posts-tabs'>
+        {% include "_post.html" %}
+    </div>
+    
+    {{ macros.pagination_widget(url_prev,url_next,'.profileAdmin')}}
+
+{% endblock content %}

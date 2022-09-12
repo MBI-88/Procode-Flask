@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--FONT AWESOME-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <!--Fonts oswald-->
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../static/estilos.css">
+    <!--SCROLL REVEAL-->
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="../static/main.js"></script>
+    {{ moment.include_moment() }}
+    <title>ProC0d3{% block title %}{% endblock title %}</title>
+</head>
+<body>
+    <div class="menu-btn">
+        <i class="fas fa-bars"></i>
+    </div>
+    <div class="container" id="content">
+        <nav class="nav-main" id="navmain">
+            <img src="../static/img/logo.jpg" alt="LOGO" class="nav-brand">
+            {% block navmain %}
+                <ul class="nav-menu ">
+                    <li>
+                        <a href="{{url_for('main.index')}}">Inicio</a>
+                    </li>
+                    <li>
+                        <a href="#">Célulares</a>
+                    </li>
+                    <li>
+                        <a href="#">Populares</a>
+                    </li>
+                    <li>
+                        <a href="#">Info</a>
+                    </li>
+                    <li>
+                        <a href="#">Destacados</a>
+                    </li>
+                    <li>
+                        <a href="#">Ventas</a>
+                    </li>
+                    <li>
+                        <a href="#">Más</a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('auth.login') }}">Comentar</a>
+                    </li>
+                </ul>
+                <!-- lupa-->
+                <ul class="nav-menu-right" id="navmenuright">
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-search"></i>
+                        </a>
+                    </li>
+                </ul>
+            {% endblock navmain %}
+        </nav>
+        <hr>
+    {% block content %}
+        <!--showcase-->
+        <header class="showcase">
+            <h2>Lorem, ipsum dolor.</h2>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi, temporibus soluta doloremque dolores libero, esse accusantium tempora obcaecati quibusdam sed aliquid quisquam, similique eos tempore veritatis quaerat amet fuga quidem.</p>
+            <a href="#" class="btn">Más <i class="fas fa-angle-double-right"></i></a>
+        </header>
+
+        <!--new cards-->
+        <div class="news-cards">
+            <div>
+                <img src="../static/img/shiwa-id-F_cfF1uX7qY-unsplash.jpg" alt="news1">
+                <h3>Lorem, ipsum dolor.</h3>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur dolor ipsa porro quasi ipsam. Est expedita neque recusandae vel voluptatem?</p>
+                <a href="#">ver más <i class="fas fa-angle-double-right"></i></a>
+
+            </div>
+
+            <div>
+                <img src="../static/img/pexels-anna-nekrashevich-6802049.jpg" alt="news2">
+                <h3>Lorem, ipsum dolor.</h3>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur dolor ipsa porro quasi ipsam. Est expedita neque recusandae vel voluptatem?</p>
+                <a href="#">ver más <i class="fas fa-angle-double-right"></i></a>
+
+            </div>
+
+            <div>
+                <img src="../static/img/pexels-bekir-donmez-9995703.jpg" alt="news3">
+                <h3>Lorem, ipsum dolor.</h3>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur dolor ipsa porro quasi ipsam. Est expedita neque recusandae vel voluptatem?</p>
+                <a href="#">ver más <i class="fas fa-angle-double-right"></i></a>
+
+            </div>
+
+            <div>
+                <img src="../static/img/pexels-photomix-company-887751.jpg" alt="news4">
+                <h3>Lorem, ipsum dolor.</h3>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur dolor ipsa porro quasi ipsam. Est expedita neque recusandae vel voluptatem?</p>
+                <a href="#">ver más <i class="fas fa-angle-double-right"></i></a>
+
+            </div>
+        </div>
+        <section class="cards-banner-one">
+            <div class="content">
+                <h2>Lorem, ipsum dolor.</h2>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Unde, ullam. Est deserunt assumenda laudantium ipsa, porro veniam. Iste, porro optio.</p>
+                <a href="#" class="btn">más <i class="fas fa-angle-double-right"></i></a>
+            </div>
+        </section>
+
+        <div class="news-cards">
+            <div>
+                <img src="../static/img/pexels-tim-douglas-6205517.jpg" alt="news1">
+                <h3>Lorem, ipsum dolor.</h3>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur dolor ipsa porro quasi ipsam. Est expedita neque recusandae vel voluptatem?</p>
+                <a href="#">ver más <i class="fas fa-angle-double-right"></i></a>
+
+            </div>
+
+            <div>
+                <img src="../static/img/pexels-harper-sunday-2897035.jpg" alt="news2">
+                <h3>Lorem, ipsum dolor.</h3>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur dolor ipsa porro quasi ipsam. Est expedita neque recusandae vel voluptatem?</p>
+                <a href="#">ver más <i class="fas fa-angle-double-right"></i></a>
+
+            </div>
+
+            <div>
+                <img src="../static/img/shiwa-id-278FBsU-9II-unsplash.jpg" alt="news3">
+                <h3>Lorem, ipsum dolor.</h3>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur dolor ipsa porro quasi ipsam. Est expedita neque recusandae vel voluptatem?</p>
+                <a href="#">ver más <i class="fas fa-angle-double-right"></i></a>
+
+            </div>
+
+            <div>
+                <img src="../static/img/pexels-cottonbro-4065908.jpg" alt="news4">
+                <h3>Lorem, ipsum dolor.</h3>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur dolor ipsa porro quasi ipsam. Est expedita neque recusandae vel voluptatem?</p>
+                <a href="#">ver más <i class="fas fa-angle-double-right"></i></a>
+
+            </div>
+        
+        </div>
+
+        <section class="cards-banner-two">
+            <div class="content">
+                <h2>Lorem, ipsum dolor.</h2>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iure non, voluptates aperiam aliquam ratione, sequi quaerat minus laboriosam molestias, porro rerum autem iusto velit ab. Voluptas laborum nostrum sint ipsam.</p>
+    
+                <a href="#" class="btn">más <i class="fas fa-angle-double-right"></i></a>
+            </div>
+        </section>
+
+    {% endblock content %} 
+        <section class="social">
+            <p>Síguenos en:</p>
+            <div class="links" id="Link">
+                <a href="https://facebook.com/groups/254064783524633/">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://" onclick="alert('En proceso de desarrollo')">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://" onclick="alert('En proceso de desarrollo')">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+            </div>
+        </section>   
+    </div>
+    <div class="footer-links" id="footerLink">
+    {% block footerLink %}
+        <div class="footer-container" id="footerContainer">
+        {% block footerContainer %}
+            <ul>
+                <li>
+                    <h3>lorem one</h3>
+                    <a href="#">lorem</a>
+                </li>
+                <li>
+                    <a href="#">lorem</a>
+                </li>
+                <li>
+                    <a href="#">lorem</a>
+                </li>
+                <li>
+                    <a href="#">lorem</a>
+                </li>
+                <li>
+                    <a href="#">lorem</a>
+                </li>
+                <li>
+                    <a href="#">lorem</a>
+                </li>
+                
+            </ul>
+            <ul>
+            
+                <li>
+                    <h3>lorem two</h3>
+                    <a href="#">lorem</a>
+                </li>
+                <li>
+                    <a href="#">lorem</a>
+                </li>
+                <li>
+                    <a href="#">lorem</a>
+                </li>
+                <li>
+                    <a href="#">lorem</a>
+                </li>
+                <li>
+                    <a href="#">lorem</a>
+                </li>
+                <li>
+                    <a href="#">lorem</a>
+                </li>
+                
+            </ul>
+            <ul>
+            
+                <li>
+                    <h3>lorem three</h3>
+                    <a href="#">lorem</a>
+                </li>
+                <li>
+                    <a href="#">lorem</a>
+                </li>
+                <li>
+                    <a href="#">lorem</a>
+                </li>
+                <li>
+                    <a href="#">lorem</a>
+                </li>
+                <li>
+                    <a href="#">lorem</a>
+                </li>
+                <li>
+                    <a href="#">lorem</a>
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <h3>lorem four</h3>
+                    <a href="#">lorem</a>
+                </li>
+                <li>
+                    <a href="#">lorem</a>
+                </li>
+                <li>
+                    <a href="#">lorem</a>
+                </li>
+                <li>
+                    <a href="#">lorem</a>
+                </li>
+                <li>
+                    <a href="#">lorem</a>
+                </li>
+                <li>
+                    <a href="#">lorem</a>
+                </li>
+            </ul>
+        {% endblock footerContainer %}
+        </div>
+    {% endblock footerLink %}
+    </div>
+    <footer class="footer" id="foot">
+    {% block foot %}
+        <h3>ProCOd3 Copyright</h3>
+    {% endblock foot %}
+    </footer>
+</body>
+</html>

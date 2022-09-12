@@ -1,0 +1,37 @@
+{% extends 'baseIndex.html' %}
+{% import "_macros.html" as macros %}
+{% block navmain %}
+    <a href="{{ url_for('main.index') }}"><h2 class="light">Index</h2></a>
+    <a href="{{ url_for('auth.logout') }}"><h2 class="light">Logout</h2></a>
+{% endblock navmain %}
+
+{% block content %}
+<div "profile-img">
+    <img src="{{ usr.gravatar(size=256) }}">
+</div>
+<div class="user-data">
+    <h2> Usuario: {{ usr.username }}</h2>
+    <h3> Miembro desde: {{moment(usr.member_since).format('L')}}</h3>
+    <h3> Ultima vez en el sitio: {{moment(usr.last_seen).fromNow()}}</h3>
+</div>
+<div class="comment">
+    <form action="{{ url_for('main.post')}}" method="post">
+        {{form.csrf_token}}
+        <legend> <h1>{{ form.body.label }}</h1></legend>
+        {{ form.body(class="comment-body")}}
+        {{form.submit(class="submit")}}
+    </form>
+</div>
+{% if posts %}
+    <div class="posts-tabs">
+        {% include "_post.html" %}
+    </div>
+{% else %}
+    <h2>No tienes posts</h2>
+{% endif %}
+
+{{ macros.pagination_widget(url_prev,url_next,'main.user', name=usr.username)}}
+
+{% endblock content %}
+
+

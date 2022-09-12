@@ -1,0 +1,17 @@
+{% extends 'baseIndex.html' %}
+{% block navmain %}
+    <a href="{{ url_for('main.index') }}"><h2 class="light">Inicio</h2></a>
+    <a href="{{ url_for('auth.login') }}"><h2 class="light">Login</h2></a>
+{% endblock navmain %}
+
+{% block content %}
+    <div style="padding-bottom: 50px ">
+        {% for message in get_flashed_messages() %}
+            <div class="flash-message">
+                <botton type="botton" data-dismiss="alert">&times;</botton>
+                {{ message }}
+            </div>
+        {% endfor %}
+    </div>
+{% endblock content %}
+

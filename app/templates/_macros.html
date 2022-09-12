@@ -1,0 +1,13 @@
+{% macro pagination_widget(url_prev,url_next,route,fragment='') %}
+    <div class='pagination'>
+        <div {% if not url_prev %} class="disabled-page" {% else %} class="page"{% endif %}>
+            <a href="{% if url_prev %}{{ url_for(route, page=url_prev, **kwargs)}} {% else %}#{% endif %}">
+            <h2>&laquo  Prev</h2>
+        </div>
+        <div {% if not url_next %} class="disabled-page" {% else %} class="page"{% endif %}>
+            <a href="{% if url_next %}{{url_for(route, page=url_next, **kwargs)}}
+             {% else %} # {% endif %}"> <h2>Next  &raquo</h2>
+            </a>
+        </div>
+    </div>
+{% endmacro %}

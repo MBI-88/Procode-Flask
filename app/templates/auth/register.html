@@ -1,0 +1,50 @@
+{% extends 'baseIndex.html' %}
+{% block title %}-Register{% endblock title %}
+{% block navmain %} <a href="{{ url_for('main.index')}}"><h2 class="light">Inicio</h2></a><h2>Register</h2> <h2>Login</h2> {% endblock navmain %}
+{% block content %}
+    {% for message in get_flashed_messages() %}
+        <div class="flash-message">
+            <botton type="botton" data-dismiss="alert">&times;</botton>
+            {{ message }}
+        </div>
+    {% endfor %}
+    <form action="" method="post" class="form"> {{ form.csrf_token }}
+        <h1 class="form-title">Register</h1> 
+        <div class="form-struct-name" >
+            {{ form.name(class="input-data") }}
+        </div>
+        {% if form.name.errors %}   
+                <ul class="form-errors">
+                    {% for mess in form.name.errors  %}
+                        <li>{{mess}}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        <div class="form-struct-password">
+            {{ form.password(class="input-data") }}
+        </div>
+        {% if form.password.errors %}
+                <ul class="form-errors">
+                    {% for mess in form.password.errors %}
+                        <li>{{mess}}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        <div class="form-struct-password2">
+            {{form.password2(class="input-data")}}
+        </div>
+        {% if form.password2.errors %}
+                <ul class="form-errors">
+                    {% for mess in form.password2.errors %}
+                        <li>{{mess}}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        <div>
+            {{ form.submit(class="submit") }}
+        </div>
+    </form>
+
+
+    <script src="../static/formPlaceholder.js" type="text/javascript"></script>
+{% endblock content %}

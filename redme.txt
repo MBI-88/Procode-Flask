@@ -1,0 +1,16 @@
+Para usar la aplicacion seguir estos pasos:
+
+-> instalar python3 (version recomendada 3.10.2)
+-> crear ambiente virtual: python3 -m venv <nombre del directorio>
+-> instalar las siguientes dependencias en el ambiente creado: Flask,WTForms,Faker,Flask-HTTPAuth,
+    Flask-Login,Flask-Migrate,Flask-Moment,Flask-PageDown,Flask-SQLAlchemy,Flask-WTF,bleach,Markdown
+-> en vscode, establecer variables de entorno: $env:FLASK_APP='manage.py',$env:FLASK_ENV='<modo de trabajo>
+    (modos de trabajo:development,productions,testing(por defecto para prueba)). Abrir directamente el directorio
+    raiz de la aplicacion (Flask_APP)
+-> para ejecutar el servidor usar: flask run . Para ver opciones de la linea de comandos usar: flask 
+-> para ver las url usar: flask routes
+-> el servidor se ejecuta en: localhost:5000
+
+
+Nota: La api solo puede ser usa por el administrador del server, la contraseña esta en el script config.py
+el nombre es Root. La base de datos de desarrollo esta creada con falsos usuarios.
